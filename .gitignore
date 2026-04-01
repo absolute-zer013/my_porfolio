@@ -22,6 +22,8 @@ pnpm-debug.log*
 # Editor directories
 .vscode/
 .idea/
+.claude/
+.firebase/
 *.suo
 *.ntvs*
 *.njsproj
@@ -34,3 +36,5 @@ Thumbs.db
 
 # TypeScript
 *.tsbuildinfo
+.firebaserc
+firebase.json

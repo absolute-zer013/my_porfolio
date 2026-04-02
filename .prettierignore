@@ -1,0 +1,3 @@
+# Prettier ignore, follow .gitignore but safe for redundancy
+dist/
+node_modules/

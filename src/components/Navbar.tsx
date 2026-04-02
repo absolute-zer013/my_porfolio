@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { useTheme } from "../context/ThemeContext";
-import { SECTIONS } from "../data/portfolio";
+import { useEffect, useState } from 'react';
+import { useTheme } from '../context/ThemeContext';
+import { SECTIONS } from '../data/portfolio';
 
 export default function Navbar() {
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState('about');
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
@@ -20,8 +20,8 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -35,20 +35,44 @@ export default function Navbar() {
             <button
               key={section}
               onClick={() =>
-                document.getElementById(section)?.scrollIntoView({ behavior: "smooth" })
+                document
+                  .getElementById(section)
+                  ?.scrollIntoView({ behavior: 'smooth' })
               }
-              className={`nav-btn ${activeSection === section ? "active" : ""}`}
+              className={`nav-btn ${activeSection === section ? 'active' : ''}`}
             >
               {section}
             </button>
           ))}
-          <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
-            {theme === "light" ? (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <button
+            onClick={toggleTheme}
+            className="theme-toggle"
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? (
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
             ) : (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <circle cx="12" cy="12" r="5" />
                 <line x1="12" y1="1" x2="12" y2="3" />
                 <line x1="12" y1="21" x2="12" y2="23" />

@@ -41,6 +41,7 @@ fahmi-portfolio/
 ## 📬 Contact
 
 **Fahmi Thajudeen**
+
 - Email: mfahmitj13.iu@gmail.com
 - WhatsApp: +60 13-596 6001
 - LinkedIn: [linkedin.com/in/mfahmitj13](https://www.linkedin.com/in/mfahmitj13/)

@@ -1,4 +1,5 @@
-import { skills } from "../data/portfolio";
+import { skills } from '../data/portfolio';
+import SkillPill from './SkillPill';
 
 export default function Skills() {
   return (
@@ -11,9 +12,7 @@ export default function Skills() {
           </div>
           <div className="skills-wrap reveal d1">
             {skills.map((skill) => (
-              <span key={skill} className="skill-pill">
-                {skill}
-              </span>
+              <SkillPill key={skill} label={skill} />
             ))}
           </div>
         </div>

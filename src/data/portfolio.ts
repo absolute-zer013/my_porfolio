@@ -3,8 +3,83 @@ export const SECTIONS = [
   'skills',
   'experience',
   'projects',
+  'certificates',
   'contact',
 ] as const;
+
+export interface EmploymentEntry {
+  company: string;
+  role: string;
+  period: string;
+  type: 'Full-time' | 'Internship' | 'Freelance';
+  accentColor: string;
+  points: string[];
+}
+
+export const employmentHistory: EmploymentEntry[] = [
+  {
+    company: 'Telekom Malaysia',
+    role: 'HR & Competency Training (TM ELIT)',
+    period: 'Oct 2021 – May 2022',
+    type: 'Full-time',
+    accentColor: '#8ba5b8',
+    points: [
+      'Organised employee weekly schedules and coordinated training programmes to upskill staff during Covid-19',
+      'Introduced Power BI and Canva for daily presentations; taught advanced Excel (XLookup, PivotTable) to improve team productivity',
+    ],
+  },
+  {
+    company: 'Freelancer',
+    role: 'Photographer / Videographer / Graphic Designer',
+    period: 'June 2018 – June 2021',
+    type: 'Freelance',
+    accentColor: '#9baa8c',
+    points: [
+      'Managed 50+ club events as official photographer and graphic designer; hired for weddings',
+      "Participated as official photographer at one of Malaysia's largest events",
+    ],
+  },
+  {
+    company: 'Advanced Soft Technologies',
+    role: 'Software Development Intern',
+    period: 'Mar 2019 – June 2019',
+    type: 'Internship',
+    accentColor: '#b89ab8',
+    points: [],
+  },
+];
+
+export interface Certificate {
+  title: string;
+  issuer: string;
+  year: string;
+  accentColor: string;
+  file: string;
+}
+
+export const certificates: Certificate[] = [
+  {
+    title: 'The Ultimate Guide to Game Development with Unity',
+    issuer: 'Udemy (Official)',
+    year: '2021',
+    accentColor: '#c8a882',
+    file: '/certificates/unity.png',
+  },
+  {
+    title: 'Flutter & Dart – The Complete Guide [2022 Edition]',
+    issuer: 'Udemy (Official)',
+    year: '2022',
+    accentColor: '#9baa8c',
+    file: '/certificates/flutter-dart.png',
+  },
+  {
+    title: 'Big Data Analytics 101',
+    issuer: 'CADS',
+    year: '2019',
+    accentColor: '#8ba5b8',
+    file: '/certificates/bigdata.png',
+  },
+];
 
 export const skills: string[] = [
   'Flutter',

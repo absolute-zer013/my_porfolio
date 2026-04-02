@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { experiences } from '../data/portfolio';
+import { experiences, employmentHistory } from '../data/portfolio';
 
 export default function Experience() {
   return (
@@ -8,6 +8,12 @@ export default function Experience() {
         <div className="section-header reveal">
           <span className="overline">Where I've Worked</span>
           <h2 className="section-title">Experience</h2>
+        </div>
+        <div className="exp-employer-context reveal">
+          <span className="exp-employer-dot" style={{ background: '#c8a882' }} />
+          <span className="exp-employer-label">
+            Flutter Developer · <strong>UKUYA SDN BHD</strong> · June 2023 – Present
+          </span>
         </div>
         <div className="exp-grid">
           {experiences.map((exp, i) => (
@@ -59,6 +65,34 @@ export default function Experience() {
               </span>
             </Link>
           ))}
+        </div>
+        <div className="exp-other reveal d2">
+          <span className="overline">Other Experience</span>
+          <div className="emp-timeline">
+            {employmentHistory.map((job) => (
+              <div key={job.company} className="emp-item">
+                <div className="emp-item-left">
+                  <span className="emp-dot" style={{ background: job.accentColor }} />
+                  <div className="emp-item-line" />
+                </div>
+                <div className="emp-item-right">
+                  <div className="emp-item-meta">
+                    <span className="emp-company">{job.company}</span>
+                    <span className="emp-type-badge">{job.type}</span>
+                  </div>
+                  <p className="emp-role">{job.role}</p>
+                  <p className="emp-period overline">{job.period}</p>
+                  {job.points.length > 0 && (
+                    <ul className="emp-points">
+                      {job.points.map((pt, i) => (
+                        <li key={i}>{pt}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

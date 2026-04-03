@@ -16,7 +16,7 @@ export default function ExperiencePage() {
   return (
     <>
       <DetailHeader backTo="/#experience" />
-      <main className="detail-main">
+      <main className="detail-main page-enter">
         <div className="container">
           {/* Hero band */}
           <section className="detail-hero reveal">

@@ -15,7 +15,7 @@ export default function AboutPage() {
   return (
     <>
       <DetailHeader backTo="/#about" />
-      <main className="detail-main">
+      <main className="detail-main page-enter">
         <div className="container">
           {/* Hero */}
           <section className="detail-hero reveal">
@@ -31,13 +31,52 @@ export default function AboutPage() {
           {/* About Me placeholder */}
           <section className="detail-section reveal">
             <span className="overline detail-section-label">Who I Am</span>
-            <p
-              className="detail-body"
-              style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}
-            >
-              Coming soon — this section will be updated with a personal
-              write-up.
-            </p>
+            <div className="about-intro">
+              <div className="about-profile-card">
+                <img
+                  src="/profile_picture/profile_picture.jpg"
+                  alt="Portrait of Mohammad Fahmi Bin Thajudeen"
+                  className="about-profile-img"
+                  draggable={false}
+                />
+              </div>
+              <p className="detail-body">
+                Hi, I'm Fahmi — a developer from Kedah who builds mobile apps
+                with Flutter and websites with React. I didn't start in code. I
+                spent years as a freelance photographer and designer before
+                discovering that building software scratched the same creative
+                itch — just with more debugging. I studied IT at Multimedia
+                University, and since graduating I've been building production
+                apps for government clients in Sarawak while quietly working on
+                freelance web projects on the side. These days I'm focused on
+                growing my freelance work and taking on projects where clean UI,
+                solid API integration, and reliable deployment actually matter.
+              </p>
+            </div>
+            <div style={{ marginTop: '20px' }}>
+              <a
+                href="/resume/Fahmi_Thajudeen_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Download CV
+              </a>
+            </div>
           </section>
 
           {/* Work Experience */}
@@ -64,9 +103,22 @@ export default function AboutPage() {
                     <p className="emp-period overline">{job.period}</p>
                     {job.points.length > 0 && (
                       <ul className="emp-points">
-                        {job.points.map((pt, i) => (
-                          <li key={i}>{pt}</li>
-                        ))}
+                        {job.points.map((pt, i) => {
+                          const isSubPoint =
+                            job.company === 'Freelancer' &&
+                            pt.startsWith('Comic Fiesta is');
+
+                          return (
+                            <li
+                              key={i}
+                              className={
+                                isSubPoint ? 'emp-point-sub' : undefined
+                              }
+                            >
+                              {pt}
+                            </li>
+                          );
+                        })}
                       </ul>
                     )}
                   </div>

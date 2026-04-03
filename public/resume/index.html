@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohammad Fahmi Bin Thajudeen — Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 15px;
+      }
+
+      body {
+        font-family: 'DM Sans', 'Segoe UI', Arial, sans-serif;
+        color: #2e2a26;
+        background: #f8f5f0;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .page {
+        max-width: 820px;
+        margin: 32px auto;
+        background: #fff;
+        padding: 48px 56px;
+        border: 1px solid #e8e0d4;
+        border-radius: 6px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+      }
+
+      /* ── Header ── */
+      .header {
+        margin-bottom: 28px;
+        border-bottom: 2px solid #c8a882;
+        padding-bottom: 20px;
+      }
+      .name {
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: #2e2a26;
+        margin-bottom: 4px;
+      }
+      .title-line {
+        font-size: 0.95rem;
+        color: #6b5e4d;
+        margin-bottom: 12px;
+      }
+      .contact-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 20px;
+        font-size: 0.82rem;
+        color: #5a5248;
+      }
+      .contact-row a {
+        color: #5a5248;
+        text-decoration: none;
+      }
+      .contact-row a:hover {
+        color: #2e2a26;
+        text-decoration: underline;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .contact-sep {
+        color: #c8a882;
+      }
+
+      /* ── Sections ── */
+      .section {
+        margin-bottom: 22px;
+      }
+      .section-title {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #937055;
+        margin-bottom: 10px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #e8e0d4;
+      }
+
+      /* ── Summary ── */
+      .summary {
+        font-size: 0.88rem;
+        line-height: 1.7;
+        color: #4a4540;
+      }
+
+      /* ── Experience ── */
+      .job {
+        margin-bottom: 16px;
+      }
+      .job:last-child {
+        margin-bottom: 0;
+      }
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 4px;
+      }
+      .job-company {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #2e2a26;
+      }
+      .job-period {
+        font-size: 0.78rem;
+        color: #7b6f53;
+        white-space: nowrap;
+      }
+      .job-role {
+        font-size: 0.85rem;
+        color: #6b5e4d;
+        margin-bottom: 6px;
+      }
+      .job-type {
+        font-size: 0.65rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #937055;
+        padding: 1px 6px;
+        border: 1px solid #e8e0d4;
+        border-radius: 2px;
+        margin-left: 6px;
+        vertical-align: middle;
+      }
+      .job-points {
+        list-style: none;
+        padding: 0;
+      }
+      .job-points li {
+        font-size: 0.82rem;
+        line-height: 1.65;
+        color: #4a4540;
+        padding-left: 14px;
+        position: relative;
+        margin-bottom: 3px;
+      }
+      .job-points li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.6em;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: #c8a882;
+      }
+
+      /* ── Projects ── */
+      .project {
+        margin-bottom: 14px;
+      }
+      .project:last-child {
+        margin-bottom: 0;
+      }
+      .proj-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 2px;
+      }
+      .proj-name {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #2e2a26;
+      }
+      .proj-year {
+        font-size: 0.78rem;
+        color: #7b6f53;
+      }
+      .proj-type {
+        font-size: 0.8rem;
+        color: #6b5e4d;
+        margin-bottom: 4px;
+      }
+      .proj-desc {
+        font-size: 0.82rem;
+        line-height: 1.6;
+        color: #4a4540;
+      }
+      .proj-stack {
+        font-size: 0.78rem;
+        color: #937055;
+        margin-top: 3px;
+      }
+      .proj-link {
+        font-size: 0.78rem;
+        color: #5b7a8a;
+        text-decoration: none;
+      }
+      .proj-link:hover {
+        text-decoration: underline;
+      }
+
+      /* ── Skills ── */
+      .skills-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .skill-tag {
+        font-size: 0.78rem;
+        padding: 3px 10px;
+        border: 1px solid #e8e0d4;
+        border-radius: 2px;
+        color: #4a4540;
+        background: #faf7f3;
+      }
+
+      /* ── Education ── */
+      .edu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 4px;
+      }
+      .edu-school {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #2e2a26;
+      }
+      .edu-year {
+        font-size: 0.78rem;
+        color: #7b6f53;
+      }
+      .edu-degree {
+        font-size: 0.82rem;
+        color: #6b5e4d;
+        margin-bottom: 2px;
+      }
+
+      /* ── Certs ── */
+      .cert-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 4px;
+      }
+      .cert-name {
+        font-size: 0.82rem;
+        color: #2e2a26;
+      }
+      .cert-issuer {
+        font-size: 0.78rem;
+        color: #7b6f53;
+      }
+
+      /* ── Print ── */
+      @media print {
+        body {
+          background: #fff;
+        }
+        .page {
+          margin: 0;
+          padding: 36px 44px;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+          max-width: none;
+        }
+        .print-btn {
+          display: none !important;
+        }
+      }
+
+      .print-btn {
+        display: block;
+        margin: 16px auto 32px;
+        padding: 10px 28px;
+        background: #2e2a26;
+        color: #f8f5f0;
+        border: none;
+        border-radius: 3px;
+        font-family: inherit;
+        font-size: 0.82rem;
+        letter-spacing: 0.08em;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+      .print-btn:hover {
+        opacity: 0.85;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- Header -->
+      <header class="header">
+        <h1 class="name">Mohammad Fahmi Bin Thajudeen</h1>
+        <p class="title-line">
+          Flutter &amp; React Developer · Based in Malaysia
+        </p>
+        <div class="contact-row">
+          <span class="contact-item">
+            <a href="mailto:mfahmitj13.iu@gmail.com">mfahmitj13.iu@gmail.com</a>
+          </span>
+          <span class="contact-sep">·</span>
+          <span class="contact-item">
+            <a href="https://wa.me/60135966001">+60 13-596 6001</a>
+          </span>
+          <span class="contact-sep">·</span>
+          <span class="contact-item">
+            <a href="https://www.linkedin.com/in/mfahmitj13/"
+              >linkedin.com/in/mfahmitj13</a
+            >
+          </span>
+          <span class="contact-sep">·</span>
+          <span class="contact-item">
+            <a href="https://github.com/absolute-zer013"
+              >github.com/absolute-zer013</a
+            >
+          </span>
+        </div>
+      </header>
+
+      <!-- Summary -->
+      <section class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="summary">
+          Mobile and web developer with 3+ years of experience building
+          production applications using Flutter and React. Focused on clean UI
+          implementation, reliable API integration, and shipping
+          production-ready apps. Experienced in delivering government-grade
+          mobile systems for federal ministries in Malaysia, with additional
+          freelance web projects for private clients. Background in photography
+          and graphic design.
+        </p>
+      </section>
+
+      <!-- Work Experience -->
+      <section class="section">
+        <h2 class="section-title">Work Experience</h2>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-company"
+              >UKUYA SDN BHD<span class="job-type">Full-time</span></span
+            >
+            <span class="job-period">June 2023 – Present</span>
+          </div>
+          <p class="job-role">Flutter Developer</p>
+          <ul class="job-points">
+            <li>
+              Collaborate with cross-functional teams to build mobile and web
+              applications based on approved UI designs and technical
+              requirements
+            </li>
+            <li>
+              Develop and maintain production applications using Flutter with
+              clean, scalable, production-ready code
+            </li>
+            <li>
+              Translate wireframes and design mockups into responsive,
+              pixel-accurate UI across multiple device sizes
+            </li>
+            <li>
+              Troubleshoot and debug critical issues to maintain stable and
+              reliable release cycles
+            </li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-company"
+              >Telekom Malaysia (TM ELIT)<span class="job-type"
+                >Full-time</span
+              ></span
+            >
+            <span class="job-period">Oct 2021 – May 2022</span>
+          </div>
+          <p class="job-role">Human Resource &amp; Competency Training</p>
+          <ul class="job-points">
+            <li>
+              Organized and implemented weekly employee schedules during
+              Covid-19 operational adjustments
+            </li>
+            <li>
+              Planned and coordinated training sessions to upskill teams and
+              improve execution
+            </li>
+            <li>
+              Introduced Power BI and Canva for internal presentations and
+              knowledge-sharing
+            </li>
+            <li>
+              Guided colleagues on advanced Excel functions (XLookup,
+              PivotTable) to improve productivity
+            </li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-company"
+              >Freelancer<span class="job-type">Freelance</span></span
+            >
+            <span class="job-period">June 2018 – June 2021</span>
+          </div>
+          <p class="job-role">
+            Photographer, Videographer &amp; Graphic Designer
+          </p>
+          <ul class="job-points">
+            <li>
+              Managed 50+ club events as photographer and graphic designer;
+              hired for weddings and brand shoots
+            </li>
+            <li>
+              Official photographer at Comic Fiesta 2022 and 2024, one of
+              Malaysia's largest pop-culture conventions
+            </li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-company"
+              >Advanced Soft Technologies Sdn. Bhd<span class="job-type"
+                >Internship</span
+              ></span
+            >
+            <span class="job-period">Mar 2019 – June 2019</span>
+          </div>
+          <p class="job-role">Software Development Intern</p>
+        </div>
+      </section>
+
+      <!-- Key Projects (Contract) -->
+      <section class="section">
+        <h2 class="section-title">Key Projects (Contract – via UKUYA)</h2>
+
+        <div class="project">
+          <div class="proj-header">
+            <span class="proj-name"
+              >SANSOLS — Government NRE &amp; Immigration System</span
+            >
+            <span class="proj-year">2022 – 2025</span>
+          </div>
+          <p class="proj-type">
+            Client: National Registration Department (JPN) &amp; Immigration,
+            Malaysia
+          </p>
+          <ul class="job-points">
+            <li>
+              Built State Secretary mobile app (Flutter/Android) for
+              approving/rejecting foreign worker permits with digital signatures
+            </li>
+            <li>
+              Implemented NRE management, employer profiles, AP application
+              forms, workplace listings &amp; licensing screens
+            </li>
+            <li>
+              Set up GitHub Actions CI/CD pipeline for automated APK builds and
+              Play Store deployment
+            </li>
+            <li>
+              Resolved 50+ critical bugs across ALPHA and LIVE environments
+            </li>
+          </ul>
+          <p class="proj-stack">
+            Flutter · Dart · GraphQL · GitHub Actions · Android · Play Store
+          </p>
+        </div>
+
+        <div class="project">
+          <div class="proj-header">
+            <span class="proj-name"
+              >SAFHIS — Medical Facility Registration System</span
+            >
+            <span class="proj-year">2024</span>
+          </div>
+          <p class="proj-type">Client: Ministry of Health (KKM), Malaysia</p>
+          <ul class="job-points">
+            <li>
+              Built multi-step medical facility registration flow in Flutter
+            </li>
+            <li>
+              Developed reusable operating hours input component with
+              configurable day/time toggles
+            </li>
+            <li>Implemented government admin permissions &amp; settings UI</li>
+            <li>
+              Integrated REST API client with full prefill logic for multi-page
+              forms
+            </li>
+          </ul>
+          <p class="proj-stack">Flutter · Dart · REST API</p>
+        </div>
+
+        <div class="project">
+          <div class="proj-header">
+            <span class="proj-name"
+              >iSC | Workflow — Ministry Benefits &amp; Approval System</span
+            >
+            <span class="proj-year">2022 – 2023</span>
+          </div>
+          <p class="proj-type">
+            Client: Ministry of Finance / Public Service, Malaysia
+          </p>
+          <ul class="job-points">
+            <li>
+              Built multi-level approval flows with inline comments for
+              different authority levels
+            </li>
+            <li>
+              Fixed cross-platform UI issues across iOS, Android, and iPad
+            </li>
+            <li>
+              Implemented bulk approval functionality (up to 50 applications at
+              once)
+            </li>
+          </ul>
+          <p class="proj-stack">Flutter · Dart · iOS · Android · iPad</p>
+        </div>
+
+        <div class="project">
+          <div class="proj-header">
+            <span class="proj-name"
+              >FW Jobs (Perkeso) — Foreign Worker Jobs Portal</span
+            >
+            <span class="proj-year">2024 – 2025</span>
+          </div>
+          <p class="proj-type">
+            Client: PERKESO (Social Security Organisation), Malaysia
+          </p>
+          <ul class="job-points">
+            <li>
+              Executed full UI rebranding across all screens from Perkeso to FW
+              Jobs identity
+            </li>
+            <li>
+              Implemented PDF generation for hiring reports and interviewer
+              participation lists
+            </li>
+            <li>
+              Fixed QR code scanning errors and interview details display bugs
+            </li>
+          </ul>
+          <p class="proj-stack">Flutter · Dart · PDF Generation · QR Code</p>
+        </div>
+      </section>
+
+      <!-- Personal / Freelance Projects -->
+      <section class="section">
+        <h2 class="section-title">Personal &amp; Freelance Projects</h2>
+
+        <div class="project">
+          <div class="proj-header">
+            <span class="proj-name"
+              >FFmpeg Filter App — Desktop Video Processing Tool</span
+            >
+            <span class="proj-year">2024</span>
+          </div>
+          <p class="proj-desc">
+            Desktop utility for batch-processing MKV video files with codec
+            conversion (H.264, H.265, VP9, AV1), GPU auto-detection, quality
+            presets, and automated Windows release builds via CI/CD.
+          </p>
+          <p class="proj-stack">
+            Flutter · Dart · Windows · FFmpeg · GitHub Actions
+          </p>
+          <a
+            class="proj-link"
+            href="https://github.com/absolute-zer013/ffmpeg-gui-application"
+            >github.com/absolute-zer013/ffmpeg-gui-application</a
+          >
+        </div>
+
+        <div class="project">
+          <div class="proj-header">
+            <span class="proj-name"
+              >Creator Portfolio — Travel Content Creator Media Kit</span
+            >
+            <span class="proj-year">2024</span>
+          </div>
+          <p class="proj-desc">
+            Media kit website for a travel content creator with TikTok embeds,
+            brand partnership showcase (AirAsia, Malaysia Airlines, Insta360),
+            and Firebase Hosting.
+          </p>
+          <p class="proj-stack">React · Vite · Tailwind CSS · Firebase</p>
+        </div>
+
+        <div class="project">
+          <div class="proj-header">
+            <span class="proj-name"
+              >Law Firm Website — Professional Site &amp; Article CMS</span
+            >
+            <span class="proj-year">2023</span>
+          </div>
+          <p class="proj-desc">
+            Two-part web project: public-facing professional website covering 4
+            practice areas, plus a private admin portal for article management
+            via Firebase Realtime Database.
+          </p>
+          <p class="proj-stack">
+            React · Vite · Firebase · Firebase Realtime Database
+          </p>
+        </div>
+
+        <div class="project">
+          <div class="proj-header">
+            <span class="proj-name"
+              >Developer Portfolio — Personal Website</span
+            >
+            <span class="proj-year">2025</span>
+          </div>
+          <p class="proj-desc">
+            Custom developer portfolio with dual-theme support, scroll
+            animations, detail pages, and Firebase Hosting. Built entirely
+            without component libraries.
+          </p>
+          <p class="proj-stack">
+            React · TypeScript · Vite · Vanilla CSS · Firebase
+          </p>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <span class="skill-tag">Flutter</span>
+          <span class="skill-tag">Dart</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Vite</span>
+          <span class="skill-tag">Vanilla CSS</span>
+          <span class="skill-tag">Tailwind CSS</span>
+          <span class="skill-tag">GraphQL</span>
+          <span class="skill-tag">REST API</span>
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">State Management</span>
+          <span class="skill-tag">Git / GitHub</span>
+          <span class="skill-tag">GitHub Actions</span>
+          <span class="skill-tag">CI/CD</span>
+          <span class="skill-tag">Android</span>
+          <span class="skill-tag">Play Store Deployment</span>
+          <span class="skill-tag">UI / UX Implementation</span>
+          <span class="skill-tag">Responsive Design</span>
+          <span class="skill-tag">Figma</span>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="section">
+        <h2 class="section-title">Education</h2>
+        <div class="edu-header">
+          <span class="edu-school">Multimedia University (MMU)</span>
+          <span class="edu-year">2018 – 2021</span>
+        </div>
+        <p class="edu-degree">Bachelor of Information Technology (Hons.)</p>
+      </section>
+
+      <!-- Certificates -->
+      <section class="section">
+        <h2 class="section-title">Certifications</h2>
+        <div class="cert-item">
+          <span class="cert-name"
+            >The Ultimate Guide to Game Development with Unity</span
+          >
+          <span class="cert-issuer">Udemy · 2021</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name"
+            >Flutter &amp; Dart – The Complete Guide [2022 Edition]</span
+          >
+          <span class="cert-issuer">Udemy · 2022</span>
+        </div>
+        <div class="cert-item">
+          <span class="cert-name">Big Data Analytics 101</span>
+          <span class="cert-issuer">CADS · 2019</span>
+        </div>
+      </section>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">
+      Print / Save as PDF
+    </button>
+  </body>
+</html>

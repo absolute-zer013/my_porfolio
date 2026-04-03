@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import App from './App';
+import AboutPage from './pages/AboutPage';
 import ExperiencePage from './pages/ExperiencePage';
 import ProjectPage from './pages/ProjectPage';
 import './index.css';
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')!).render(
       <ThemeProvider>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/experience/:slug" element={<ExperiencePage />} />
           <Route path="/projects/:slug" element={<ProjectPage />} />
         </Routes>

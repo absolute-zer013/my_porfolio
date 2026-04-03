@@ -1,13 +1,16 @@
+import { useState } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { projects } from '../data/portfolio';
 import DetailHeader from '../components/DetailHeader';
 import Footer from '../components/Footer';
 import SkillPill from '../components/SkillPill';
+import ScreenshotViewer from '../components/ScreenshotViewer';
 import { useReveal } from '../hooks/useReveal';
 
 export default function ProjectPage() {
   const { slug } = useParams<{ slug: string }>();
   const proj = projects.find((p) => p.slug === slug);
+  const [viewerIndex, setViewerIndex] = useState<number | null>(null);
 
   useReveal();
 
@@ -48,29 +51,24 @@ export default function ProjectPage() {
           </section>
 
           {/* Screenshots */}
-          <section className="detail-section reveal">
-            <span className="overline detail-section-label">Screenshots</span>
-            <div className="detail-screenshots">
-              {[0, 1, 2].map((i) => (
-                <div key={i} className="detail-screenshot-placeholder">
-                  <svg
-                    width="28"
-                    height="28"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x="3" y="3" width="18" height="14" rx="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <polyline points="21 15 16 10 5 21" />
-                  </svg>
-                </div>
-              ))}
-            </div>
-          </section>
+          {proj.screenshots && proj.screenshots.length > 0 && (
+            <section className="detail-section reveal">
+              <span className="overline detail-section-label">Screenshots</span>
+              <div className="detail-screenshots">
+                {proj.screenshots.map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt={`${proj.title} screenshot ${i + 1}`}
+                    className="detail-screenshot-img"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    onClick={() => setViewerIndex(i)}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* Features */}
           <section className="detail-section reveal">
@@ -135,6 +133,14 @@ export default function ProjectPage() {
         </div>
       </main>
       <Footer />
+      {viewerIndex !== null && proj.screenshots && (
+        <ScreenshotViewer
+          screenshots={proj.screenshots}
+          initialIndex={viewerIndex}
+          projectTitle={proj.title}
+          onClose={() => setViewerIndex(null)}
+        />
+      )}
     </>
   );
 }

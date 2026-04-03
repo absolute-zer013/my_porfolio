@@ -3,7 +3,6 @@ export const SECTIONS = [
   'skills',
   'experience',
   'projects',
-  'certificates',
   'contact',
 ] as const;
 
@@ -17,6 +16,14 @@ export interface EmploymentEntry {
 }
 
 export const employmentHistory: EmploymentEntry[] = [
+  {
+    company: 'UKUYA SDN BHD',
+    role: 'Flutter Developer',
+    period: 'June 2023 – Present',
+    type: 'Full-time',
+    accentColor: '#c8a882',
+    points: [],
+  },
   {
     company: 'Telekom Malaysia',
     role: 'HR & Competency Training (TM ELIT)',
@@ -275,6 +282,8 @@ export interface Project {
   techStack: string[];
   status: string;
   year: string;
+  cardImage?: string;
+  screenshots?: string[];
 }
 
 export const projects: Project[] = [
@@ -300,6 +309,22 @@ export const projects: Project[] = [
     techStack: ['Flutter', 'Dart', 'Windows', 'FFmpeg', 'GitHub Actions'],
     status: 'Shipped',
     year: '2024',
+    cardImage: '/app_screenshot/ffmpeg_project/Screenshot_20260403_170411.png',
+    screenshots: [
+      '/app_screenshot/ffmpeg_project/Screenshot_20260403_170411.png',
+      '/app_screenshot/ffmpeg_project/Screenshot_20260403_170433.png',
+      '/app_screenshot/ffmpeg_project/Screenshot_20260403_170914.png',
+      '/app_screenshot/ffmpeg_project/Screenshot_20260403_170925.png',
+      '/app_screenshot/ffmpeg_project/Screenshot_20260403_170934.png',
+      '/app_screenshot/ffmpeg_project/Screenshot_20260403_170946.png',
+      '/app_screenshot/ffmpeg_project/Screenshot_20260403_170957.png',
+      '/app_screenshot/ffmpeg_project/Screenshot_20260403_171008.png',
+      '/app_screenshot/ffmpeg_project/Screenshot_20260403_171024.png',
+      '/app_screenshot/ffmpeg_project/Screenshot_20260403_171037.png',
+      '/app_screenshot/ffmpeg_project/Screenshot_20260403_171054.png',
+      '/app_screenshot/ffmpeg_project/Screenshot_20260403_190018.png',
+      '/app_screenshot/ffmpeg_project/Screenshot_20260403_190042.png',
+    ],
   },
   {
     title: 'Creator Portfolio',

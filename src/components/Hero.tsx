@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function Hero() {
   return (
     <section id="about" className="hero-section">
@@ -30,46 +32,31 @@ export default function Hero() {
                     <div className="overline">Projects</div>
                   </div>
                 </div>
-                <div className="overline" style={{ marginTop: 8 }}>
-                  Available for
-                </div>
-                <div
-                  style={{
-                    fontSize: '0.82rem',
-                    color: 'var(--text-muted)',
-                    marginTop: 2,
-                  }}
-                >
-                  Freelance
-                </div>
               </div>
             </div>
             <div className="hero-ctas reveal d3">
-              <a href="#contact" className="btn-primary">
-                Get in Touch
-              </a>
-              <a href="#projects" className="btn-outline">
-                View Projects
-              </a>
+              <Link to="/about" className="btn-primary">
+                More About Me
+              </Link>
             </div>
           </div>
-          <div className="hero-photo reveal d1">
-            <svg
-              width="36"
-              height="36"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="12" cy="8" r="4" />
-              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-            </svg>
-            <span className="overline" style={{ marginTop: 10 }}>
-              Your photo
-            </span>
+          <div className="hero-photo-wrap reveal d1">
+            <div className="hero-photo-accent" />
+            <div className="hero-photo-frame">
+              <div className="hero-photo-frame-inner">
+                <img
+                  src="/profile_picture/profile_picture.jpg"
+                  alt="Profile"
+                  className="hero-photo-img"
+                  onContextMenu={(e) => e.preventDefault()}
+                  draggable={false}
+                />
+              </div>
+              <div className="hero-photo-badge">
+                <span className="hero-photo-badge-dot" />
+                Available for Freelance
+              </div>
+            </div>
           </div>
         </div>
       </div>

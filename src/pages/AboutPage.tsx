@@ -125,10 +125,7 @@ export default function AboutPage() {
       </main>
       <Footer />
       {selectedCert && (
-        <CertModal
-          cert={selectedCert}
-          onClose={() => setSelectedCert(null)}
-        />
+        <CertModal cert={selectedCert} onClose={() => setSelectedCert(null)} />
       )}
     </>
   );

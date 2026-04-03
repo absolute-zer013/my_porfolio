@@ -483,8 +483,13 @@ a {
   animation: badgepulse 2.4s ease-in-out infinite;
 }
 @keyframes badgepulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
 }
 
 /* ── Skills ── */
@@ -940,7 +945,9 @@ a {
   user-select: none;
   -webkit-user-drag: none;
   cursor: pointer;
-  transition: opacity 0.15s, transform 0.15s;
+  transition:
+    opacity 0.15s,
+    transform 0.15s;
 }
 .detail-screenshot-img:hover {
   opacity: 0.82;
@@ -1228,11 +1235,13 @@ a {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
-  transition: border-color 0.15s, box-shadow 0.15s;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
 }
 .cert-item-btn:hover {
   border-color: var(--text-muted);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 .cert-chevron {
   flex-shrink: 0;
@@ -1293,7 +1302,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.15s, color 0.15s;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
 }
 .cert-modal-close:hover {
   border-color: var(--text-muted);
@@ -1368,7 +1379,9 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.15s, color 0.15s;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
 }
 .sv-close:hover {
   border-color: #706d66;
@@ -1405,7 +1418,9 @@ a {
   justify-content: center;
   cursor: pointer;
   color: #c8c5bf;
-  transition: background 0.15s, border-color 0.15s;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
   z-index: 1;
   flex-shrink: 0;
 }
@@ -1413,8 +1428,12 @@ a {
   background: rgba(255, 255, 255, 0.14);
   border-color: rgba(255, 255, 255, 0.24);
 }
-.sv-arrow-prev { left: -54px; }
-.sv-arrow-next { right: -54px; }
+.sv-arrow-prev {
+  left: -54px;
+}
+.sv-arrow-next {
+  right: -54px;
+}
 .sv-dots {
   display: flex;
   justify-content: center;
@@ -1429,7 +1448,9 @@ a {
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: background 0.15s, transform 0.15s;
+  transition:
+    background 0.15s,
+    transform 0.15s;
 }
 .sv-dot:hover {
   background: rgba(255, 255, 255, 0.4);
@@ -1442,8 +1463,12 @@ a {
   .sv-backdrop {
     padding: 16px;
   }
-  .sv-arrow-prev { left: 4px; }
-  .sv-arrow-next { right: 4px; }
+  .sv-arrow-prev {
+    left: 4px;
+  }
+  .sv-arrow-next {
+    right: 4px;
+  }
   .sv-arrow {
     width: 36px;
     height: 36px;

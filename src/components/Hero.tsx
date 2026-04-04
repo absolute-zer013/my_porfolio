@@ -11,10 +11,11 @@ export default function Hero() {
               Fahmi <span className="hero-title-em">Thajudeen</span>
             </h1>
             <p className="hero-bio reveal d2">
-              I build <strong>mobile and web applications</strong> with Flutter,
-              React, and modern tooling — focused on clean UI implementation,
-              reliable API integration, and shipping production-ready apps.
-              Based in <strong>Malaysia</strong>.
+              <strong>Mobile Developer</strong> with 3+ years of experience
+              translating UI designs into high-quality Flutter code, integrating
+              GraphQL and REST APIs, and deploying mobile apps via CI/CD
+              pipelines. Experienced in government-scale enterprise systems and
+              freelance web projects. Based in <strong>Malaysia</strong>.
             </p>
             <div className="stat-box dot-pattern reveal d2">
               <div className="stat-inner">

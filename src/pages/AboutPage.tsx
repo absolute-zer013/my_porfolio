@@ -41,21 +41,23 @@ export default function AboutPage() {
                 />
               </div>
               <p className="detail-body">
-                Hi, I'm Fahmi — a developer from Kedah who builds mobile apps
-                with Flutter and websites with React. I didn't start in code. I
-                spent years as a freelance photographer and designer before
-                discovering that building software scratched the same creative
-                itch — just with more debugging. I studied IT at Multimedia
-                University, and since graduating I've been building production
-                apps for government clients in Sarawak while quietly working on
-                freelance web projects on the side. These days I'm focused on
-                growing my freelance work and taking on projects where clean UI,
-                solid API integration, and reliable deployment actually matter.
+                Hi, I'm Fahmi — a mobile developer with 3+ years of experience
+                translating UI designs into high-quality Flutter code,
+                integrating GraphQL and REST APIs, and deploying mobile apps via
+                CI/CD pipelines. I didn't start in code. I spent years as a
+                freelance photographer and designer before discovering that
+                building software scratched the same creative itch — just with
+                more debugging. I studied IT at Multimedia University, and since
+                graduating I've been building government-scale enterprise
+                systems and working on freelance web projects using React on the
+                side. Currently, I'm open to freelance engagements and focused
+                on taking on projects where clean UI, solid API integration, and
+                reliable deployment actually matter.
               </p>
             </div>
             <div style={{ marginTop: '20px' }}>
               <a
-                href="/resume/Fahmi_Thajudeen_CV.pdf"
+                href="/resume/Fahmi_Thajudeen_Resume_latest.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline"
@@ -103,22 +105,9 @@ export default function AboutPage() {
                     <p className="emp-period overline">{job.period}</p>
                     {job.points.length > 0 && (
                       <ul className="emp-points">
-                        {job.points.map((pt, i) => {
-                          const isSubPoint =
-                            job.company === 'Freelancer' &&
-                            pt.startsWith('Comic Fiesta is');
-
-                          return (
-                            <li
-                              key={i}
-                              className={
-                                isSubPoint ? 'emp-point-sub' : undefined
-                              }
-                            >
-                              {pt}
-                            </li>
-                          );
-                        })}
+                        {job.points.map((pt, i) => (
+                          <li key={i}>{pt}</li>
+                        ))}
                       </ul>
                     )}
                   </div>
